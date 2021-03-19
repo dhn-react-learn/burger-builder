@@ -10,7 +10,6 @@ const burger = (props) => {
         <BurgerIngredient key={igKey + i} type={igKey} />
       ));
     }).reduce((acc, igs) => acc.concat(igs), []);
-  console.log(transformedIngredients);
   if (transformedIngredients.length === 0 ) {
     transformedIngredients = <p>Please start adding ingredients!</p>
   }
