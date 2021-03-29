@@ -1,7 +1,6 @@
 import React from 'react';
 
 import classes from './Order.module.css';
-import { capitalize } from 'lodash';
 
 const order = (props) => {
   const ingredients = Object.keys(props.ingredients).map(ingr => ({
