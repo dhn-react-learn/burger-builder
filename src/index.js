@@ -11,6 +11,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import burgerBuilderReducer from './store/reducers/burgerBuilder';
 import orderReducer from './store/reducers/order';
+import authReducer from './store/reducers/auth';
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -19,9 +20,23 @@ const composeEnhancers =
 
 const rootReducer = combineReducers({
   burger: burgerBuilderReducer,
-  order: orderReducer
+  order: orderReducer,
+  auth: authReducer
 })
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+
+// var firebaseConfig = {
+//   apiKey: "AIzaSyDq4AW6YEDIyqkXpAwua1ASNSnbIOxJTcY",
+//   authDomain: "react-my-burger-4ad8e.firebaseapp.com",
+//   databaseURL: "https://react-my-burger-4ad8e.firebaseio.com",
+//   projectId: "react-my-burger-4ad8e",
+//   storageBucket: "react-my-burger-4ad8e.appspot.com",
+//   messagingSenderId: "428419983005",
+//   appId: "1:428419983005:web:6b67b5ffaa105184e9d674",
+//   measurementId: "G-451LMC7Q6F"
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
